@@ -8,17 +8,17 @@ int binary_tree_balance(const binary_tree_t *tree)
 {
 	int countleft = 0, countright = 0;
 
-	if (!tree)
-                return (0);
-        if (tree->left)
-        {
-                countleft++;
-                countleft += binary_tree_balance(tree->left);
-        }
-        if (tree->right)
-        {
-                countright++;
-                countright += binary_tree_balance(tree->right);
-        }
-        return (countleft - countright);
+	if (!tree || (!tree->left && !tree->right))
+		return (0);
+	if (tree->left)
+	{
+		countleft++;
+		countleft += binary_tree_balance(tree->left);
+	}
+	if (tree->right)
+	{
+		countright++;
+		countright += binary_tree_balance(tree->right);
+	}
+	return (countleft - countright);
 }
