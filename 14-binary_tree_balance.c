@@ -8,7 +8,7 @@ int binary_tree_balance(const binary_tree_t *tree)
 {
 	int countleft = 0, countright = 0;
 
-	if (!tree || (!tree->left && !tree->right))
+	if (!tree)
 		return (0);
 	if (tree->left)
 	{
