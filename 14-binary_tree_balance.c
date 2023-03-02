@@ -11,10 +11,14 @@ int binary_tree_balance(const binary_tree_t *tree)
 	if (!tree || (!tree->left && !tree->right))
 		return (0);
 	if (tree->left)
+	{
 		countleft++;
-	countleft += binary_tree_balance(tree->left);
+		countleft += binary_tree_balance(tree->left);
+	}
 	if (tree->right)
+	{
 		countright++;
-	countright += binary_tree_balance(tree->right);
+		countright += binary_tree_balance(tree->right);
+	}
 	return (countleft - countright);
 }
