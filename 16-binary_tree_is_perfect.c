@@ -11,13 +11,16 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 	if (!tree || (!tree->left && !tree->right))
 		return (0);
 	if (tree->left)
+	{
 		countleft++;
-	countleft += binary_tree_is_perfect(tree->left);
+		countleft += binary_tree_is_perfect(tree->left);
+	}
 	if (tree->right)
+	{
 		countright++;
-	countright += binary_tree_is_perfect(tree->right);
+		countright += binary_tree_is_perfect(tree->right);
+	}
 	if (countleft == countright)
 		return (1);
-	else
-		return (0);
+	return (0);
 }
