@@ -6,11 +6,12 @@
  */
 bst_t *bst_insert(bst_t **tree, int value)
 {
-	if (!(*tree))
-		(*tree) = binary_tree_node((*tree), value);
-	else if (value < (*tree)->left->n)
-		(*tree)->left = bst_insert(&(*tree).left, value);
-	else if (value > (*tree)->right->n)
-		(*tree)->right = bst_insert(&(*tree).right, value);
-	return (*tree);
+	bst_t *root = (*tree);
+	if (!root)
+		root = binary_tree_node(root, value);
+	else if (value < root->left->n)
+		root->left = bst_insert(&root->left, value);
+	else if (value > root->right->n)
+		root->right = bst_insert(&root->right, value);
+	return (root);
 }

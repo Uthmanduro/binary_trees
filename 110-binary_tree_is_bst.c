@@ -9,7 +9,7 @@ int issubtreelesser(binary_tree_t *tree, int value)
 {
 	if (!tree)
 		return (0);
-	if (tree->n <= value && issubtreelesser(tree->left, value) && issubtreelesser(tree->left, value))
+	if (tree->n < value && issubtreelesser(tree->left, value) && issubtreelesser(tree->left, value))
 		return (1);
 	else
 		return (0);
@@ -24,7 +24,7 @@ int issubtreegreater(binary_tree_t *tree, int value)
 {
         if (!tree)
                 return (0);
-        if (tree->n <= value && issubtreegreater(tree->left, value) && issubtreegreater(tree->left, value))
+        if (tree->n > value && issubtreegreater(tree->left, value) && issubtreegreater(tree->left, value))
                 return (1);
         else
                 return (0);
